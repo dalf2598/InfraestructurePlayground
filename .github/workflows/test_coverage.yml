@@ -16,7 +16,7 @@ jobs:
       - name: Install dependencies
         run: pip install -r api/requirements.txt
       - name: Run tests
-        run: pytest api/test
+        run: pytest api/tests
       - name: Get code coverage
         uses: codecov/codecov-action@v3
         with:
