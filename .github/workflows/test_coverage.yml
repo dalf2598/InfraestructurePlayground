@@ -31,13 +31,8 @@ jobs:
 
     - name: Show test results
       run: |
-        grep -oP '(?<=total": )[0-9]+' pytest_report.json > total_tests.txt
-        grep -oP '(?<=passed": )[0-9]+' pytest_report.json > passed_tests.txt
-        grep -oP '(?<=failed": )[0-9]+' pytest_report.json > failed_tests.txt
-        grep -oP '(?<=skipped": )[0-9]+' pytest_report.json > skipped_tests.txt
-        awk '{print "Total: " $1 ", Passed: " $2 ", Failed: " $3 ", Skipped: " $4}' total_tests.txt passed_tests.txt failed_tests.txt skipped_tests.txt > test_results.txt
-        cat test_results.txt
-
+        jq -r '.summary | "Total: \(.total), Passed: \(.passed), Failed: \(.failed), Skipped: \(.skipped)"' pytest_report.json
+    
     - name: Run tests with coverage
       run: |
         coverage run -m pytest api/tests
