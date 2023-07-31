@@ -1,0 +1,49 @@
+# Byte-compiled / optimized Python files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Python Virtual Environment
+venv/
+env/
+*.venv
+.venv/
+.venv*/
+*.env
+
+# IDE-specific files (example for Visual Studio Code)
+.vscode/
+*.code-workspace
+
+# Editor-specific temporary files
+*~
+*.swp
+
+# Logs
+*.log
+
+# Cache files
+.cache/
+
+# Compiled files
+*.pyc
+
+# Dependency directories
+# (Add other directories specific to your project if needed)
+env/
+lib/
+lib64/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Miscellaneous
+*.bak
+*.tmp
+*.orig
+
+# Ignore the credentials file if used (Never commit credentials!)
+credentials.json
