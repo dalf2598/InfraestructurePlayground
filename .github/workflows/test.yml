@@ -24,3 +24,6 @@ jobs:
 
     - name: Run tests
       run: pytest api/tests
+
+    - name: Check test status
+      run: exit ${{ job.status }}
