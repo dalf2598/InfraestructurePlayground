@@ -1,4 +1,4 @@
-name: Test
+name: pytest-coverage-comment
 
 on:
   pull_request:
@@ -27,7 +27,7 @@ jobs:
           pytest --junitxml=pytest.xml --cov-report=term-missing:skip-covered --cov-config=api/.coveragerc --cov=api api/tests/ | tee pytest-coverage.txt
 
       - name: Pytest coverage comment
-        uses: MishaKav/pytest-coverage-comment@main
+        uses: MishaKav/pytest-coverage-comment@v1.1.48
         with:
           pytest-coverage-path: ./pytest-coverage.txt
           junitxml-path: ./pytest.xml
