@@ -21,10 +21,9 @@ fix: orders can now be placed
 
 For your branch name you can follow the next format:
 
-```shell
-                {work type}/{trello ticket name}
-```
-For the `work type` we have the next types:
+<p align="center"><b>{work-type}/{trello-ticket-name}</b></p>
+
+For the `work-type` we have the next types:
 
 - **bug**: Code changes to fix a known bug.
 - **feature**: Development of a new feature.
