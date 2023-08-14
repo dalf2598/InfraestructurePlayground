@@ -13,9 +13,9 @@ Below there are some common examples you can use for your commit messages:
 - **test**: Adding missing tests or correcting existing tests.
 
 ### Example
-
+```shell
     fix: orders can now be placed
-
+```
 ## Branch names format
 
 For your branch name you can follow the next format:
@@ -33,7 +33,7 @@ For the `work type` we have the next types:
 ### Example:
 
 ```shell
-bug/PIZ1-I-cannot-create-an-order
+  bug/PIZ1-I-cannot-create-an-order
 ```
 ## Pull-request names format
 For your PR only use the trello ticket name 
