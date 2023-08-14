@@ -13,23 +13,21 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: 3.7
+      
       - name: Install dependencies
         run: pip install -r api/requirements.txt
+      
       - name: Run tests
         run: pytest api/tests
 
-    if: always()
+      - name: Install pytest-cov
+        run: pip install pytest-cov
+      
+      - name: Build coverage file
+        run: pytest --junitxml=pytest.xml --cov-report=term-missing:skip-covered --cov-config=.coveragerc --cov=app api/tests/ | tee pytest-coverage.txt
 
-  merge:
-    runs-on: ubuntu-latest
-    needs: test
-    steps:
-      - name: Check if tests passed
-        run: |
-          if [ "${{ steps.test.outputs.result }}" != "passed" ]; then
-            echo "Tests failed, aborting merge."
-            exit 1
-          fi
-      - name: Merge branch
-        run: |
-          git merge ${{ github.event.pull_request.head.ref }}
+      - name: Pytest coverage comment
+        uses: MishaKav/pytest-coverage-comment@main
+        with:
+          pytest-coverage-path: ./pytest-coverage.txt
+          junitxml-path: ./pytest.xml
