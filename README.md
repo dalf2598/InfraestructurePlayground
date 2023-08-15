@@ -28,6 +28,7 @@ For the `work-type` we have the next types:
 - **bug**: Code changes to fix a known bug.
 - **feature**: Development of a new feature.
 - **test**: Code changes related to tests.
+- **documentation**: Documentation changes.
 - **hotfix**: Quick fix for a critical bug.
 
 ### Example:
